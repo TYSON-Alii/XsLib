@@ -107,7 +107,6 @@ typedef unsigned int XsTexture;
 #include <array>
 #include <algorithm>
 #include <system/XsTrash.hpp>
-#include <math/XsString.hpp>
 #include <system/XsLog.hpp>
 #include <math/XsVex4.hpp>
 #include <math/XsVex3.hpp>
