@@ -1,5 +1,4 @@
 struct XsVertex {
-	XsVertex operator+ (vex3f __vev);
 	vex3f position = vex3cf(0, 0, 0);
 	vex2f texcoord = vex2cf(0, 0);
 	vex3f normal = vex3cf(0, 0, 0);
@@ -154,6 +153,61 @@ public:
 			if (vertices[__i].normal.x != NULL)
 				glNormal3f(vertices[__i].normal.x, vertices[__i].normal.y, vertices[__i].normal.z);
 		}
+	};
+};
+
+class XsSolidShapes {
+	class triangle {
+	public:
+		vex3f pos;
+		vex4f rot;
+		vex3f color;
+		vex2f scale;
+		void draw() {
+			glLoadIdentity();
+			glTranslatef(pos.x, pos.y, pos.z);
+			glRotatef(rot.w, rot.x, rot.y, rot.z);
+			glColor3f(color.x, color.y, color.z);
+			glBegin(GL_TRIANGLES);
+			for (float i = -0.9; i < 0.9; i += 0.333)
+				glVertex3f(cos(i * XS_PI) * scale.x, sin(i * XS_PI) * scale.y, 0);
+			glEnd();
+		};
+	};
+	class rectangle {
+	public:
+		vex3f pos;
+		vex4f rot;
+		vex3f color;
+		vex2f scale;
+		void draw() {
+			glLoadIdentity();
+			glTranslatef(pos.x, pos.y, pos.z);
+			glRotatef(rot.w, rot.x, rot.y, rot.z);
+			glColor3f(color.x, color.y, color.z);
+			glBegin(GL_TRIANGLES);
+			for (float i = -1; i < 1; i += 0.25)
+				glVertex3f(cos(i * XS_PI) * scale.x, sin(i * XS_PI) * scale.y, 0);
+			glEnd();
+		};
+	};
+	class polygone {
+	public:
+		vex3f pos;
+		vex4f rot;
+		vex3f color;
+		vex2f scale;
+		int count;
+		void draw() {
+			glLoadIdentity();
+			glTranslatef(pos.x, pos.y, pos.z);
+			glRotatef(rot.w, rot.x, rot.y, rot.z);
+			glColor3f(color.x, color.y, color.z);
+			glBegin(GL_TRIANGLES);
+			for (float i = -1; i < 1; i += 1.0f / float(count))
+				glVertex3f(cos(i * XS_PI) * scale.x, sin(i * XS_PI) * scale.y, 0);
+			glEnd();
+		};
 	};
 };
 
