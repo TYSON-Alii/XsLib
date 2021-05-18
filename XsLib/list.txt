@@ -1,0 +1,82 @@
+soon
+- var converter
+	- string to int
+	- string to float
+	- string to double
+- 3d model
+	- obj writer
+	- x3d loader / writer
+	- xs.model file
+- shape mode
+	- subdivide
+	- unsubdivide
+	- erase
+	- random
+	- tidy
+	- push
+	- pull
+	- mix
+- openal
+	- sounds player
+	- change sounds options
+- search algorithm
+	- binary
+	- jump
+	- linear search
+	- fibonacci search
+- gui
+	- imgui entegration
+	- circle color edit panel
+	- circle slider
+	- square slider
+- ttf loader
+	- to texture
+- texture
+	- texture creater
+		- voronoi
+		- noise
+		- wave
+		- perlin noise
+	- texture writer
+	- bmp loader
+- physics
+	- basic physics
+	- collission
+		- elips
+	- world
+	- octree optimize
+- math
+	- trigonometry
+	- functions
+	- matrix
+		- 2x2
+		- 2x3
+		- 2x4
+		- 3x2
+		- 3x3
+		- 3x4
+		- 4x2
+		- 4x3
+		- 4x4
+	- towards
+	- color coverter
+	- random number
+- clock
+	- counting dowm
+	- fps limiter
+- shape
+	- basic solid shapes
+	- basic 2d solid shapes
+	- normal shape optimize
+	- particul
+		- with collission
+		- uni shape particul
+	- view shape
+- camera
+	- tps camera
+- lighting
+	- light
+	- point light
+	- sun
+	- transparenty (glass)
+	- glow effect
