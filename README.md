@@ -1,1 +1,1 @@
-# XsLib, my OpenGL additional library.
+# XsLib, my OpenGL additional library. (So So Beta)
