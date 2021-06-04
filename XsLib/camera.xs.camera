@@ -1,0 +1,9 @@
+# tekli yorum satiri
+##
+coklu
+yorum
+satri
+##
+## frame count, position, rotation, fov, near, far, viewport
+i 1
+f -20 0 0 0 0 45 0.001 100000 1000 750

@@ -1,0 +1,172 @@
+- 3d model
+	- obj loader
+	- obj writer !
+	- x3d loader / writer !
+	- xs.model file
+	- xs.model writer
+- sound
+	- sounds player
+	- change sounds options
+- search algorithm
+	- binary !
+	- jump !
+	- linear search !
+	- fibonacci search !
+- gui
+	- imgui entegration !
+	- circle color edit panel !
+	- circle slider !
+	- square slider !
+- ttf loader
+	- loader
+	- to texture !
+- texture
+	- stb image loader
+	- texture creater
+		- voronoi !
+		- noise !
+		- wave !
+		- perlin noise !
+	- texture writer !
+	- bmp loader !
+	- xs.image file !
+	- xs.image writer !
+	- gif, apng player
+- physics
+	- basic physics !
+	- collission
+		- elips !
+	- world !
+	- octree optimize !
+- system
+	- mouse info
+	- keyboard info
+	- log
+		- messages
+		- error
+		- date
+- math
+	- number to string
+	- string to int !
+	- string to float !
+	- string to double !
+	- collission AABB
+	- trigonometry !
+	- functions ~
+	- euler to quaternion
+	- printer
+		- vex2, vex3, vex4, vector etc.
+	- vextor
+	- matrix
+		- 2x2 !
+		- 2x3 !
+		- 2x4 !
+		- 3x2 !
+		- 3x3 !
+		- 3x4 !
+		- 4x2 !
+		- 4x3 !
+		- 4x4 !
+	- vex
+		- vex2
+		- vex3
+		- vex4
+		- vex5
+	- vex math
+		- add
+		- subtract
+		- multipy
+		- divide
+		- floor
+		- ceil
+		- atan2
+		- atan
+		- asin
+		- acos
+		- tan
+		- sin
+		- cos
+		- abs
+		- sqrt
+		- percent
+		- pow
+		- rand
+		- average
+	- towards !
+	- color converter !
+	- random number !
+- clock
+	- chronometer
+	- timer loop
+	- counting dowm
+	- date
+- shape
+	- many vertex shape optimize !
+	- particul
+		- with collission !
+		- uni shape particul !
+	- view shape !
+	- out line color !
+	- mirror !
+	- octree optimizer !
+	- array vertex
+	- vertex write to text
+	- popup shapes
+	- sky
+		- skybox
+		- skysphere
+		- star and clouds
+	- animation 
+		- 2d animation
+		- 3d animation
+		- xs.anim file
+		- xs.anim writer
+	- solid shapes
+		- 3d
+			- cube
+			- prism
+			- sphere
+			- ico sphere
+			- cone
+			- cylinder
+			- torus
+			- monke
+			- teapot
+			- star
+			- bunny!
+			- arrow !
+			- random vertex !
+			- rock generator !
+		- 2d
+			- triangle
+			- quad
+			- polygone
+	- shape mode
+		- subdivide !
+		- unsubdivide !
+		- erase !
+		- random !
+		- tidy !
+		- push !
+		- pull !
+		- mix !
+		- add
+		- scaler
+		- origin
+	- meta shape
+		- cube !
+		- sphere !
+		- capsule !
+	- shadow mapper !
+- camera
+	- normal camera 
+	- fps camera
+	- tps camera !
+	- camera animation system !
+- shaders
+	- light !
+	- point light !
+	- sun !
+	- transparenty (glass) !
+	- glow effect !
+	- mirror !
