@@ -10,11 +10,11 @@ public:
 	_t& operator[](size_t _n) { return elem[_n]; };
 	void resize(size_t _n, _t _s) {
 		if (_n < _size) {
-			_t* _copy = new _t[_size];
-			for (size_t i = 0; i < _size; i++)
+			_t* _copy = new _t[_n];
+			for (size_t i = 0; i < _n; i++)
 				_copy[i] = elem[i];
 			elem = new _t[_n];
-			for (size_t i = 0; i < _size; i++) {
+			for (size_t i = 0; i < _n; i++) {
 				elem[i] = _copy[i];
 			};
 			_size = _n;
@@ -82,7 +82,7 @@ public:
 			elem[i] = _copy[i];
 		delete _copy;
 	};
-	void pop_back(_t _v) {
+	void pop_back() {
 		_t* _copy = new _t[_size - 1];
 		for (size_t i = 0; i < _size - 1; i++)
 			_copy[i] = elem[i];
@@ -103,7 +103,7 @@ public:
 			elem[i] = _copy[i];
 		delete _copy;
 	};
-	void pop_front(_t _v) {
+	void pop_front() {
 		_t* _copy = new _t[_size - 1];
 		for (size_t i = 1; i < _size; i++)
 			_copy[i - 1] = elem[i];
