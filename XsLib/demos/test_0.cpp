@@ -145,7 +145,7 @@ int main() {
         XsPrintVertices(plane, XS_ALL);
 
         window.display();
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && XsLimiter(_s, 0.2))
+        if (XsIsKeyPressed(XS_KEY_SPACE) && XsLimiter(_s, 0.2))
             std::cout << "shpe size: " << balls.size() << ", fps: " << (float)1e9 / (float)std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::high_resolution_clock::now() - fps_start).count() << "\n";
     }
     return 0;
