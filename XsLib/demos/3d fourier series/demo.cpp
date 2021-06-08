@@ -151,7 +151,7 @@ int main() {
     b3.speed = 0.6;
     b3.pitch = 0;
     b3.yaw = 0;
-    b3.scale = 1.1;
+    b3.scale = 0.2;
     b3.color = XsColorHoneydew;
 
     std::chrono::high_resolution_clock::time_point fps_start;
