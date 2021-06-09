@@ -1,4 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #define GLEW_ENABLE_EXPERIMENTAL
 #include <GL/glew.h>
 #define GLM_ENABLE_EXPERIMENTAL
@@ -26,11 +26,11 @@ private:
     std::vector<vex3f> paint_coord;
     XsChrono paint_clock;
 public:
-    float yaw;
-    float pitch;
+    float yaw = 0;
+    float pitch = 0;
     void pos() { _pos = vex3f(0); };
     void pos(vex3f _v) { _pos = _v; };
-    void pos(ball _b, vex3f _s) { _pos = _b.rot() * _s; };
+    void pos(ball _b, vex3f _s) { _pos = _b.get_pos() + _b.rot() * _s; };
     vex3f rot() {
         vex3f _temp;
         _temp.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
@@ -39,7 +39,6 @@ public:
         return _temp;
     };
     vex3f get_pos() { return _pos; };
-    vex3f speed;
     float scale;
     vex3f color;
     vex3f paint_color;
@@ -78,7 +77,7 @@ public:
             glEnd();
         };
     };
-    void paint (float _b) {
+    void paint(float _b) {
         if (XsLimiter(paint_clock, _b)) {
             paint_coord.push_back(_pos);
         };
@@ -132,27 +131,32 @@ int main() {
 
     ball b1;
     b1.pos();
-    b1.speed = 0.6;
-    b1.pitch = 0;
-    b1.yaw = 0;
     b1.scale = 1.0f;
     b1.color = XsColorDodgerBlue;
 
     ball b2;
-    b2.pos(b1, 5.0f);
-    b2.speed = 0.6;
-    b2.pitch = 0;
-    b2.yaw = 0;
-    b2.scale = 0.7;
+    b2.scale = 0.4;
     b2.color = XsColorVioletRed;
 
     ball b3;
-    b3.pos(b2, 5.0f);
-    b3.speed = 0.6;
-    b3.pitch = 0;
-    b3.yaw = 0;
-    b3.scale = 0.2;
-    b3.color = XsColorHoneydew;
+    b3.scale = 0.5;
+    b3.color = XsColorGainsBoro;
+
+    ball b4;
+    b4.scale = 0.3;
+    b4.color = XsColorGold;
+
+    ball b5;
+    b5.scale = 0.4;
+    b5.color = XsColorLavender;
+
+    ball b6;
+    b6.scale = 0.3;
+    b6.color = XsColorRoyalBlue;
+
+    ball b7;
+    b7.scale = 0.2;
+    b7.color = XsColorPeru;
 
     std::chrono::high_resolution_clock::time_point fps_start;
     while (window.isOpen()) {
@@ -189,15 +193,39 @@ int main() {
         b2.pos(b1, 5);
         b2.drawLine(b1, XsColorCornsilk);
         b2.draw();
-        b2.yaw += 0.9;
+        b2.yaw -= 0.9;
         b2.pitch -= 1.9;
-        
-        b3.pos(b2, 9);
-        b3.drawLine(b2, XsColorCornsilk);
-        b3.paint_color = XsColorLawnGreen;
-        b3.paint_width = 5;
-        b3.paint(0.02);
+
+        b3.pos(b2, 8);
+        b3.drawLine(b2, XsColorAliceBlue);
         b3.draw();
+        b3.yaw -= 0.6;
+        b3.pitch += 2.3;
+
+        b4.pos(b3, 3);
+        b4.drawLine(b3, XsColorGreenYellow);
+        b4.draw();
+        b4.yaw += 0.2;
+        b4.pitch += 1.1;
+
+        b5.pos(b4, 6);
+        b5.drawLine(b4, XsColorLinen);
+        b5.draw();
+        b5.yaw -= 0.2;
+        b5.pitch -= 0.5;
+
+        b6.pos(b5, 5.2);
+        b6.drawLine(b5, XsColorIndianRed);
+        b6.draw();
+        b6.yaw += 0.4;
+        b6.pitch -= 0.8;
+
+        b7.pos(b6, 9);
+        b7.drawLine(b6, XsColorAquamarine);
+        b7.paint_color = XsColorLawnGreen;
+        b7.paint_width = 5;
+        b7.paint(0.01);
+        b7.draw();
 
         window.display();
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && XsLimiter(_s, 0.2))
