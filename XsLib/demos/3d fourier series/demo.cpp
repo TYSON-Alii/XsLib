@@ -122,7 +122,7 @@ int main() {
     kameram.rot = 1;
 
     XsTexture sky;
-    XsStbImageLoad("data/SunsetSky.png", sky, GL_CLAMP_TO_BORDER, GL_NEAREST, GL_RGBA);
+    XsStbImageLoad("SunsetSky.png", sky, GL_CLAMP_TO_BORDER, GL_NEAREST, GL_RGBA);
 
     XsSky skybox;
     skybox.color = 1;
