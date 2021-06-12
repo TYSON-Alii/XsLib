@@ -25,7 +25,7 @@ vextor<vex3f> ball_speeds;
 
 int main() {
     srand(time(NULL));
-    XsVertices plane = XsOBJLoader("plane.obj", XS_ALL);
+    XsVertices plane = XsOBJLoader("data/plane.obj", XS_ALL);
     sf::ContextSettings contextSettings;
     contextSettings.depthBits = 24;
     contextSettings.stencilBits = 8;
@@ -38,16 +38,9 @@ int main() {
     window.setKeyRepeatEnabled(false);
     glewExperimental = GL_TRUE;
     glewInit();
-    glEnable(GL_SCISSOR_TEST);
-    glEnable(GL_DEPTH_TEST);
+    glEnable(7, GL_SCISSOR_TEST, GL_DEPTH_TEST, GL_NORMALIZE, GL_COLOR_MATERIAL, GL_LIGHTING, GL_LIGHT0, GL_BLEND);
     glDepthFunc(GL_LESS);
-    glEnable(GL_NORMALIZE);
-    glEnable(GL_COLOR_MATERIAL);
     glShadeModel(GL_SMOOTH);
-    glEnable(GL_LIGHTING);
-    glEnable(GL_TEXTURE_2D);
-    glEnable(GL_LIGHT0);
-    glEnable(GL_BLEND);
     glBlendFunc(GL_ZERO, GL_SRC_COLOR);
     glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_ONE, GL_ZERO);
     glBlendEquation(GL_FUNC_ADD);
@@ -62,11 +55,11 @@ int main() {
     floor.wrapping = GL_CLAMP_TO_BORDER;
     floor.filter = GL_NEAREST;
     floor.format = GL_RGB;
-    floor.fileName = "siyah.png";
+    floor.fileName = "data/siyah.png";
     floor.load();
 
     XsTexture sky;
-    XsStbImageLoad("BlueSkySkyBoxb.png", sky, GL_CLAMP_TO_BORDER, GL_NEAREST, GL_RGBA);
+    XsStbImageLoad("data/BlueSkySkyBoxb.png", sky, GL_CLAMP_TO_BORDER, GL_NEAREST, GL_RGBA);
 
     XsSky skybox;
     skybox.color = 1;
@@ -103,8 +96,8 @@ int main() {
         kameram.viewport = vex2f(window.getSize().x, window.getSize().y);
 
         if (XsLimiter(saat, 0.005) && XsIsKeyPressed(XS_MOUSE_LEFT)) {
-            ball.color = XsRand3f(0, 1000) / 1000;
-            ball.pos = (kameram.rot + XsRand3f(-100, 100) / 1000) * 13 - kameram.pos;
+            ball.color = vex4f(rand3f(0, 1000) / 1000, 1);
+            ball.pos = (kameram.rot + rand3f(-100, 100) / 1000) * 13 - kameram.pos;
             ball.rot = 0;
             ball_speeds.push_back(kameram.rot * 2);
             balls.push_back(ball);
@@ -129,7 +122,7 @@ int main() {
             ball_speeds.back() = ((kameram.rot * 13 - kameram.pos + speed) - balls.back().pos) / XS_PI - speed;
         };
         for (int i = 0; i < balls.size(); i++) {
-            ball_speeds[i] *= 0.998;
+            ball_speeds[i] *= 0.998f;
             balls[i].pos.x < 0 ? ball_speeds[i].x += 0.04/* + (randomf(-10, 10) / 200)*/ : ball_speeds[i].x -= 0.04/* + (randomf(-10, 10) / 200)*/;
             balls[i].pos.y < 0 ? ball_speeds[i].y += 0.04/* + (randomf(-10, 10) / 200)*/ : ball_speeds[i].y -= 0.04/* + (randomf(-10, 10) / 200)*/;
             balls[i].pos.z < 0 ? ball_speeds[i].z += 0.04/* + (randomf(-10, 10) / 200)*/ : ball_speeds[i].z -= 0.04/* + (randomf(-10, 10) / 200)*/;
