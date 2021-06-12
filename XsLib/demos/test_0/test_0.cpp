@@ -25,7 +25,7 @@ vextor<vex3f> ball_speeds;
 
 int main() {
     srand(time(NULL));
-    XsVertices plane = XsOBJLoader("data/plane.obj", XS_ALL);
+    XsVertices plane = XsOBJLoader("plane.obj", XS_ALL);
     sf::ContextSettings contextSettings;
     contextSettings.depthBits = 24;
     contextSettings.stencilBits = 8;
@@ -62,11 +62,11 @@ int main() {
     floor.wrapping = GL_CLAMP_TO_BORDER;
     floor.filter = GL_NEAREST;
     floor.format = GL_RGB;
-    floor.fileName = "data/siyah.png";
+    floor.fileName = "siyah.png";
     floor.load();
 
     XsTexture sky;
-    XsStbImageLoad("data/BlueSkySkyBoxb.png", sky, GL_CLAMP_TO_BORDER, GL_NEAREST, GL_RGBA);
+    XsStbImageLoad("BlueSkySkyBoxb.png", sky, GL_CLAMP_TO_BORDER, GL_NEAREST, GL_RGBA);
 
     XsSky skybox;
     skybox.color = 1;
