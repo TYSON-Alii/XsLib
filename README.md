@@ -5,19 +5,19 @@ features;
 *"!" plans to add*
 
 * saver
-  * xs.save file
-    * add
-    * delete
-    * change
-    * check
-    * types
-      * float, int, double, bool, char, const char*, string, vex2f, vex3f, vex4f, vex2i, vex3i, vex4i, vex2d, vex3d, vex4d
+	* xs.save file
+		* add
+		* delete
+		* change
+		* check
+		* types
+	* float, int, double, bool, char, const char*, string, vex2f, vex3f, vex4f, vex2i, vex3i, vex4i, vex2d, vex3d, vex4d
 * imgui entegration
-  * info
-    * shape
-    * camera
-	  * collission !
-	  * vertices/vertex ! 
+	* info
+		* shape
+		* camera
+		* collission !
+		* vertices/vertex ! 
 * 3d model
 	* obj loader
 	* obj writer !
@@ -25,8 +25,8 @@ features;
 	* xs.model file
 	* xs.model writer
 * sound
-	* sounds player
-	* change sounds options
+	* sounds player !
+	* change sounds options !
 * search algorithm
 	* binary !
 	* jump !
@@ -115,12 +115,12 @@ features;
 	* counting dowm
 	* date
 * vertex
-  * printer
-  * vertex stream
+	* printer
+	* vertex stream
 	* vertex write to text
 	* mode
-	  * cut !
-    * subdivide !
+		* cut !
+		* subdivide !
 		* unsubdivide !
 		* erase !
 		* random !
@@ -132,7 +132,7 @@ features;
 		* scaler
 		* origin
 * shape
-  * save and load
+  	* save and load
 	* particul
 		* with collission !
 		* uni shape particul !
@@ -178,14 +178,14 @@ features;
 		* cube !
 		* capsule !
 	* shape creater
-	  * 3d
-      * plane
-	    * cube !
-	    * prism !
-	  * 2d
-	    * square !
-	    * triangle !
-	    * polygon !
+		* 3d
+	* plane
+		* cube !
+		* prism !
+	* 2d
+		* square !
+		* triangle !
+		* polygon !
 * camera
 	* normal camera
 	* fps camera
