@@ -4,73 +4,6 @@ features;
 
 *"!" plans to add*
 
-* physx
-	* shape
-		* dynamic
-		* static
-		* kinematic !
-	* triangle mesh loader
-* bullet physics
-	* shape
-		* dyanmic !
-		* static !
-		* kinematic !
-		* soft body !
-	* triangle mesh loader !
-* saver
-	* xs.save file
-		* add
-		* delete
-		* change
-		* check
-		* types
-	* float, int, double, bool, char, const char*, string, vex2f, vex3f, vex4f, vex2i, vex3i, vex4i, vex2d, vex3d, vex4d
-* imgui entegration
-	* info
-		* shape
-		* camera
-		* collission !
-		* vertices/vertex ! 
-* 3d model
-	* obj loader
-	* obj writer !
-	* x3d loader / writer !
-	* xs.model file
-	* xs.model writer
-* sound
-	* sounds player !
-	* change sounds options !
-* search algorithm
-	* binary !
-	* jump !
-	* linear search !
-	* fibonacci search !
-* gui
-	* circle color edit panel !
-	* slider
-	* drag !
-	* circle slider !
-	* square slider !
-* ttf loader
-	* loader !
-	* to texture !
-* texture
-	* stb image loader
-	* texture creater
-		* voronoi !
-		* noise !
-		* wave !
-		* perlin noise !
-	* texture writer !
-	* bmp loader !
-	* xs.image file !
-	* xs.image writer !
-	* gif, apng player
-* physics
-	* kinematic physics !
-	* collission
-		* elips !
-		* box
 * system
 	* mouse info
 	* keyboard info
@@ -78,6 +11,14 @@ features;
 		* messages
 		* error
 		* date
+* camera
+	* normal camera
+	* fps camera
+	* tps camera !
+* clock
+	* chronometer
+	* counting dowm
+	* date
 * math
 	* trigonometry !
 	* functions ~
@@ -85,65 +26,15 @@ features;
 	* printer
 		* vex2, vex3, vex4, vector etc.
 	* vextor (dynamic array)
-	* matrix
-		* 2x2 !
-		* 2x3 !
-		* 2x4 !
-		* 3x2 !
-		* 3x3 !
-		* 3x4 !
-		* 4x2 !
-		* 4x3 !
-		* 4x4 !
+	* matrix !
 	* vex
 		* vex2
 		* vex3
 		* vex4
 	* vex math
-		* add
-		* subtract
-		* multipy
-		* divide
-		* floor
-		* ceil
-		* atan2
-		* atan
-		* asin
-		* acos
-		* tan
-		* sin
-		* cos
-		* abs
-		* sqrt
-		* percent
-		* pow
-		* rand
-		* average
 	* towards !
 	* color converter !
 	* random number !
-* clock
-	* chronometer
-	* timer loop
-	* counting dowm
-	* date
-* vertex
-	* printer
-	* vertex stream
-	* vertex write to text
-	* mode
-		* cut !
-		* subdivide !
-		* unsubdivide !
-		* erase !
-		* random !
-		* tidy !
-		* push !
-		* pull !
-		* mix !
-		* add
-		* scaler
-		* origin
 * shape
   	* save and load
 	* particul
@@ -199,10 +90,23 @@ features;
 		* square !
 		* triangle !
 		* polygon !
-* camera
-	* normal camera
-	* fps camera
-	* tps camera !
+* vertex
+	* printer
+	* vertex stream
+	* vertex write to text
+	* mode
+		* cut !
+		* subdivide !
+		* unsubdivide !
+		* erase !
+		* random !
+		* tidy !
+		* push !
+		* pull !
+		* mix !
+		* add
+		* scaler
+		* origin
 * shaders
 	* learnopengl.com's shader class integration
   * light !
@@ -212,3 +116,71 @@ features;
 	* glow effect !
 	* mirror !
 	* shadow mapper !
+* colors
+* texture
+	* stb image loader
+	* texture creater
+		* voronoi !
+		* noise !
+		* wave !
+		* perlin noise !
+	* texture writer !
+	* bmp loader !
+	* xs.image file !
+	* xs.image writer !
+	* gif, apng player
+* saver
+	* xs.save file
+		* add
+		* delete
+		* change
+		* check
+		* types
+	* float, int, double, bool, char, const char*, string, vex2f, vex3f, vex4f, vex2i, vex3i, vex4i, vex2d, vex3d, vex4d
+* search algorithm
+	* binary !
+	* jump !
+	* linear search !
+	* fibonacci search !
+* 3d model
+	* obj loader
+	* obj writer !
+	* x3d loader / writer !
+	* xs.model file
+	* xs.model writer
+* physics
+	* kinematic physics !
+	* collission
+		* elips !
+		* box
+* sound
+	* sounds player !
+	* change sounds options !
+* gui
+	* circle color edit panel !
+	* slider
+	* drag !
+	* circle slider !
+	* square slider !
+* ttf loader
+	* loader !
+	* to texture !
+* imgui entegration
+	* info
+		* shape
+		* camera
+		* collission !
+		* vertices/vertex ! 
+* physx
+	* shape
+		* dynamic
+		* static
+		* kinematic !
+	* triangle mesh loader
+* bullet physics
+	* shape
+		* dyanmic !
+		* static !
+		* kinematic !
+		* soft body !
+	* triangle mesh loader !
