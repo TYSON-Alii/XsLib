@@ -4,6 +4,19 @@ features;
 
 *"!" plans to add*
 
+* physx
+	* shape
+		* dynamic
+		* static
+		* kinematic !
+	* triangle mesh loader
+* bullet physics
+	* shape
+		* dyanmic !
+		* static !
+		* kinematic !
+		* soft body !
+	* triangle mesh loader !
 * saver
 	* xs.save file
 		* add
