@@ -392,30 +392,3 @@ void glVertex2f(vex4i v) { glVertex2f(float(v.x), float(v.y)); };
 
 #include <system/XsSave.hpp>
 
-/*
-- c++ mouse ve keyboard inputlarý
-- c++ operator overloading örnekleri
-- opengl obj loader
-- physx demo
-- c++ hesap makinesi
-- bullet demo
-- c++ tarih iþlemleri
-- opengl array ile þekil basma
-- physx trianglemesh yapýmý
-- vextor postu crosspost yap
-- XsLib kullanmayý göster (seri min 10 post)
-- physx jointler
-- c++ þifreleme
-- c++ kronometre yapýmý
-- stb image yükleme
-- imgui özellikleri
-- d dili kayýt defteri
-- c++ dili kayýt defteri
-
-zorda kalýrsam paylaþýcaklarým
-- XsColor renkleri
-- solid arrayler
--
-
-
-*/
