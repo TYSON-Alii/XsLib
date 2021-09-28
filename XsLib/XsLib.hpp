@@ -4,56 +4,31 @@ typedef int vnsvkjbzczvbvhsdbhbdsvndjsvjjnksdjznmnjdkvnjzvbdnvjknszjvjz;
 int* nullint = nullptr;
 float* nullfloat = nullptr;
 double* nulldouble = nullptr;
+#define pass void()
+#define namestr(x) #x
+#define elif else if
+#define rep(v) for (decltype(v) i = 0; i < v; i +=1 )
+#define rep(v, j) for (decltype(v) i = 0; i < v; i += j)
 enum XsCoord {
 	XS_X_AXIS = 0x01,
 	XS_Y_AXIS = 0x02,
 	XS_Z_AXIS = 0x03,
-	XS_X = 0x01,
-	XS_Y = 0x02,
-	XS_Z = 0x03,
-	XS_ANGULAR = 0x04,
-	XS_LINEAR = 0x05
+	XS_X = 0x04,
+	XS_Y = 0x05,
+	XS_Z = 0x06,
+	XS_ANGULAR = 0x07,
+	XS_LINEAR = 0x08
 };
 #define and &&
-#define or !!
-#define not !=
-#define newln std::cout<<std::endl;
-#define NEWLINE std::cout<<std::endl;
+#define or ||
+#define newln std::cout<<'\n';
+#define NEWLINE std::cout<<'\n';
 #define prnt std::cout
-int random(int min, int max) { return (rand() % (max - abs(min))) + min; };
-float randomf(int min, int max) { return float(rand() % (max - abs(min))) + min; };
-double randomd(int min, int max) { return double(rand() % (max - abs(min))) + min; };
-bool randomb() { short int _t = rand() % 2; if (_t == 0) return false; return true; };
-template <typename _t> void XsChangeConstVar(const volatile _t& _v, _t _new) {
-	_t* px = (_t*)&_v;
-	*px = _new;
-};
-namespace std {
-	int atoi(bool& v) { return v ? 1 : 0; };
-	float atof(bool& v) { return v ? 1.f : 0.f; };
-	bool atob(const char* v) { return std::string(v) == "true" || std::string(v) == "1" ? true : false; };
-	bool atob(std::string v) { return v == "true" || v == "1" ? true : false; };
-};
 #define XS_PI 3.141592
 #define XS_HALF_PI 1.570796
 #define XS_TWO_PI 6.283185
 #define XS_FI 1.618033
-void glEnable(int _c, GLenum _e...) {
-	va_list vl;
-	va_start(vl, _e);
-	for (size_t i = 0; i < _c; i++) {
-		glEnable(va_arg(vl, GLenum));
-	};
-	va_end(vl);
-};
-void glDisable(int _c, GLenum _e...) {
-	va_list vl;
-	va_start(vl, _e);
-	for (size_t i = 0; i < _c; i++) {
-		glDisable(va_arg(vl, GLenum));
-	};
-	va_end(vl);
-}; 
+
 const enum XsLogColor {
 	XsLogBlack = 0,
 	XsLogDarkBlue = 1,
@@ -131,7 +106,7 @@ const enum XsKey {
 	XS_KEY_DOWN = 40,
 	XS_KEY_RIGHT = 39,
 	XS_KEY_LEFT = 37,
-	XS_KEY_SHIFT = 14,
+	XS_KEY_SHIFT = 16,
 	XS_KEY_ENTER = 13,
 	XS_MOUSE_LEFT = 1,
 	XS_MOUSE_RIGHT = 2,
@@ -173,22 +148,60 @@ const enum XsSolidType {
 	XS_TORUS = 0x08,
 	XS_SQUARE = 0x09,
 	XS_TEAPOT = 0x0a,
-	XS_STAR = 0x00b,
+	XS_STAR = 0x0b,
 	XS_POLYGONE = 0x0c,
 	XS_BOX = 0x0d,
 };
-#include <system/XsType.hpp>
-
-#ifdef XS_USE_WINDOWS
+enum XsInfoType {
+	XsInfoDrag,
+	XsInfoInput
+};
 #include <Windows.h>
-#endif
 #include <iostream>
 #include <string>
 #include <vector>
 #include <deque>
 #include <fstream>
 #include <sstream>
-#include <iomanip>
+#include <cstdarg>
+
+#include <system/XsType.hpp>
+//void glEnable(int _c, GLenum _e...) {
+//	va_list vl;
+//	va_start(vl, _e);
+//	for (size_t i = 0; i < _c; i++) {
+//		glEnable(va_arg(vl, GLenum));
+//	};
+//	va_end(vl);
+//};
+//void glDisable(int _c, GLenum _e...) {
+//	va_list vl;
+//	va_start(vl, _e);
+//	for (size_t i = 0; i < _c; i++) {
+//		glDisable(va_arg(vl, GLenum));
+//	};
+//	va_end(vl);
+//};
+int random(int min, int max) { return (std::rand() % (max - std::abs(min))) + min; };
+float randomf(int min, int max) { return float(std::rand() % (max - std::abs(min))) + min; };
+double randomd(int min, int max) { return double(std::rand() % (max - std::abs(min))) + min; };
+bool randomb() { short int _t = std::rand() % 2; if (_t == 0) return false; return true; };
+namespace std {
+	int atoi(bool& v) { return v ? 1 : 0; };
+	float atof(bool& v) { return v ? 1.f : 0.f; };
+	bool atob(const char* v) { return std::string(v) == "true" || std::string(v) == "1" ? true : false; };
+	bool atob(std::string v) { return v == "true" || v == "1" ? true : false; };
+};
+template <typename _t> void XsChangeConstVar(const volatile _t& _v, _t _new) {
+	_t* px = (_t*)&_v;
+	*px = _new;
+};
+void printx() { std::cout << '\n'; };
+template <typename T, typename ...TAIL>
+void printx(const T& v, TAIL... tail) {
+	std::cout << v << ' ';
+	printx(tail...);
+}
 std::string str(float v) {
 	std::stringstream ss;
 	ss << v;
@@ -237,9 +250,9 @@ bool XsAnyKeyPressed() {
 #include <chrono>
 #include <system/XsTrash.hpp>
 #include <system/XsLog.hpp>
-#include <math/XsVex4.hpp>
-#include <math/XsVex3.hpp>
 #include <math/XsVex2.hpp>
+#include <math/XsVex3.hpp>
+#include <math/XsVex4.hpp>
 #include <math/XsVex.hpp>
 #include <math/XsVextor.hpp>
 #include <math/XsMath.hpp>
@@ -360,6 +373,7 @@ void glVertex2f(vex4i v) { glVertex2f(float(v.x), float(v.y)); };
 
 #include <shape/XsSolidShapes.hpp>
 #include <shape/XsShape.hpp>
+#include <shape/XsMesh.hpp>
 #include <shape/XsShapeCreater.hpp>
 #include <loader/XsConverter.hpp>
 #include <loader/XsModel.hpp>
@@ -391,4 +405,3 @@ void glVertex2f(vex4i v) { glVertex2f(float(v.x), float(v.y)); };
 #endif
 
 #include <system/XsSave.hpp>
-
