@@ -129,7 +129,6 @@ void XsTPSCamera(XsCamera& camera_data, vex3f _focus) {
 	glLoadMatrixf(&xs_fullTransform_[0][0]);
 	glMatrixMode(GL_MODELVIEW);
 };
-enco ali155qwe3169!!!
 
 class XsCameraEffect {
 private:
